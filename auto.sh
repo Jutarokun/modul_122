@@ -1,5 +1,5 @@
 #!/bin/bash
 
-value=`cat Export.spl`
-echo "$value"
-
+grep -e '^2' export_test.spl \
+| cut -f3,4 -d$'\t' \
+| tr -d "'" > output.spl
